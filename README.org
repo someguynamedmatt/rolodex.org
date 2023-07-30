@@ -1,0 +1,26 @@
+* Rolodex.org
+:PROPERTIES:
+:DATE_CREATED: 07/29/2023
+:DATE_MODIFIED: 07/29/2023
+:ID:       11a1101f-d696-4f6e-a273-8ecb3c6a2dbd
+:END:
+
+This package provides a way to easily reference contacts in various org files. Each person/contact can be
+represented as an alias link (e.g. ~@matt~), which links to a rolodex file. Each heading in the rolodex file
+represents a known contact, and each /reference/ to that contact is linked within that contact's heading in
+the rolodex file.
+
+For instance: by invoking the package via a key-mapping (I use ~C-@~), I get a listing of "known" contacts
+in my rolodex...
+
+[[./img/contacts-listing.png]]
+
+If the name doesn't yet exist in my rolodex I'll be prompted to input the contact's name and an alias, which
+will be used in the links...
+
+[[./img/contacts-linked.png]]
+
+After I link the contact a reference (another link) will be placed within that contact's heading in the
+rolodex file...
+
+[[./img/contacts-references.png]]

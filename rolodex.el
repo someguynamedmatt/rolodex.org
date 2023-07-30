@@ -5,7 +5,7 @@
 ;; Keywords: contacts, people, rolodex
 ;; Version: 0.0.1
 
-;; Package-Requires: ((emacs "27.1")))
+;; Package-Requires: ((emacs "27.1")(org-ql)(ivy))
 
 ;; This file is not part of GNU Emacs.
 
