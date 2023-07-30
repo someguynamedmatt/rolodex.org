@@ -69,7 +69,7 @@
                 (visiting (current-buffer))
                 (discussion-marker (org-find-exact-headline-in-buffer heading visiting)))
             (progn
-            (let* ((rolodex-buffer (org-find-base-buffer-visiting "~/Dropbox/org/contacts.org"))
+            (let* ((rolodex-buffer (org-find-base-buffer-visiting rolodex--main-file))
                     (person-marker (org-find-exact-headline-in-buffer person rolodex-buffer t)))
                 (with-current-buffer
                     (get-buffer-create rolodex-buffer)
