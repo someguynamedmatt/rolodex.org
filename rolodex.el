@@ -35,7 +35,7 @@
     (require 'ivy)
 
 ;;;; Variables
-    (defcustom rolodex--main-file "rolodex.org"
+    (defcustom rolodex--main-file "/rolodex.org"
         "The rolodex main file name (default: rolodex.org)."
         :type 'string
         :group 'rolodex)
@@ -125,7 +125,7 @@
                                 (format "id:%s" new_id)
                                 (format "@%s" alias)))
                 (rolodex/insert-discussion-link-for new-person)
-                (insert " "))))))
+                (insert " ")))))))
 
     (provide 'rolodex)
 ;;; rolodex.el ends here
