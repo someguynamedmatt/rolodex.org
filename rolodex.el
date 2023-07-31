@@ -57,9 +57,8 @@ When the target headline is found, return a marker to its location."
 
 
 (defun rolodex/find-contact-interactive ()
-  "This defun searches through the rolodex file for a selectable contact and
+  "This defun will search through the rolodex file for a selectable contact and
 returns it if it is present."
-  (print rolodex--main-file)
   (ivy-read "Contact: " (org-ql-select rolodex--main-file
                           '(level 1)
                           :action #'org-get-heading)))
@@ -110,7 +109,7 @@ returns it if it is present."
                            (save-buffer)))))
 
 ;;;###autoload
-(defun rolodex/org-insert-person ()
+(defun rolodex/find-and-insert-contact ()
   "Once this is called, or bound to a key, this defun prompts the user to search for a
 contact in the pre-defined rolodex file. Once found a @{contact} link is inserted
 into the called-from location. This link can be followed to the contact's heading
@@ -118,14 +117,12 @@ in the rolodex file. The heading will also have a reference (link) to the called
 location inserted into it."
   (interactive)
   (setq person (rolodex/find-contact-interactive))
-  (print person)
   (progn
     (let ((file_with_name_link
            (format "%s::%s" rolodex--main-file person))
           (heading person)
           (person_marker
            (rolodex/org-find-heading-in-file person org-contacts)))
-      (print person_marker)
       (if person_marker
           (progn
             (rolodex/insert-discussion-link-for person)
